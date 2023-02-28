@@ -47,5 +47,8 @@
   "bugs": {
     "url": "https://github.com/codelikeagirlau/clg-next-storybook/issues"
   },
-  "homepage": "https://github.com/codelikeagirlau/clg-next-storybook#readme"
+  "homepage": "https://github.com/codelikeagirlau/clg-next-storybook#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }

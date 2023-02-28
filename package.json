@@ -1,10 +1,10 @@
 {
-  "name": "clg-storybook-next",
+  "name": "@codelikeagirlau/clg-storybook-next",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
@@ -12,7 +12,9 @@
     "chromatic": "npx chromatic --project-token=075b30b3eaee"
   },
   "dependencies": {
+    "@babel/cli": "^7.21.0",
     "chromatic": "^6.17.1",
+    "cross-env": "^7.0.3",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.1",
     "next": "13.2.1",
@@ -23,6 +25,7 @@
     "storybook-css-modules-preset": "^1.1.1"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.18.6",
     "@storybook/addon-essentials": "^7.0.0-beta.55",
     "@storybook/addon-interactions": "^7.0.0-beta.55",
     "@storybook/addon-links": "^7.0.0-beta.55",
@@ -33,6 +36,19 @@
     "eslint-plugin-storybook": "^0.6.11",
     "storybook": "^7.0.0-beta.55"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "clg-storybook-next@0.1.0"
+  "description": "Storybook design system for CLG apps using Next JS",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codelikeagirlau/clg-next-storybook.git"
+  },
+  "author": "Code Like a Girl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codelikeagirlau/clg-next-storybook/issues"
+  },
+  "homepage": "https://github.com/codelikeagirlau/clg-next-storybook#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }

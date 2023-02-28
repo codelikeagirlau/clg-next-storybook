@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Button } from "./Button";
-import "./header.scss";
+import styles from "./header.module.scss";
 
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       <div>
         <svg
           width="32"
@@ -29,7 +29,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
             />
           </g>
         </svg>
-        <h1>Acme</h1>
+        <h1 className={styles.title}>Acme</h1>
       </div>
       <div>
         {user ? (

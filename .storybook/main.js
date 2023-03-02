@@ -17,5 +17,9 @@ const config = {
   docs: {
     autodocs: "tag",
   },
+  features: {
+    interactionsDebugger: true,
+  },
 };
-export default config;
+
+module.exports = config;

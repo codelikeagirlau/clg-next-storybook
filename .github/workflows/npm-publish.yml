@@ -1,0 +1,25 @@
+# Name of our action
+name: "NPM Publish"
+
+on:
+  push:
+    branches:
+      - main
+
+# What the action will do
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+
+      - name: Install latest NPM
+        run: npm install -g npm@latest
+
+      - name: Set NPM registry
+        run: npm config set registry https://registry.npmjs.org/
+
+      - name: Publish NPM
+        run: npm publish

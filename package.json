@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "dev": "next dev",
-    "build": "next build src -c next-swc.config.js",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
@@ -21,7 +21,7 @@
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.1",
     "jest": "^27.5.1",
-    "next": "13.2.1",
+    "next": "^13.2.1",
     "prettier": "^2.8.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",

@@ -1,52 +1,37 @@
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React from "react";
-import PropTypes from "prop-types";
-import "./button.scss";
+"use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Button = void 0;
+var _style = _interopRequireDefault(require("styled-jsx/style"));
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));
+var _react = _interopRequireDefault(require("react"));
+require("./button.scss");
+var _excluded = ["primary", "backgroundColor", "size", "label"];
+var __jsx = _react["default"].createElement;
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
-  primary,
-  backgroundColor,
-  size,
-  label,
-  ...props
-}) => {
-  const mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
-  return /*#__PURE__*/React.createElement("button", _extends({
-    type: "button",
-    className: ["storybook-button", `storybook-button--${size}`, mode].join(" ")
-  }, props), label, /*#__PURE__*/React.createElement("style", {
-    jsx: true
-  }, `
-        button {
-          background-color: ${backgroundColor};
-        }
-      `));
+var Button = function Button(_ref) {
+  var primary = _ref.primary,
+    backgroundColor = _ref.backgroundColor,
+    size = _ref.size,
+    label = _ref.label,
+    props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
+  var mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
+  return __jsx("button", (0, _extends2["default"])({
+    type: "button"
+  }, props, {
+    className: _style["default"].dynamic([["2314204694", [backgroundColor]]]) + " " + (props && props.className != null && props.className || ["storybook-button", "storybook-button--".concat(size), mode].join(" ") || "")
+  }), label, __jsx(_style["default"], {
+    id: "2314204694",
+    dynamic: [backgroundColor]
+  }, "button.__jsx-style-dynamic-selector{background-color:".concat(backgroundColor, ";}")));
 };
-Button.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary: PropTypes.bool,
-  /**
-   * What background color to use
-   */
-  backgroundColor: PropTypes.string,
-  /**
-   * How large should the button be?
-   */
-  size: PropTypes.oneOf(["small", "medium", "large"]),
-  /**
-   * Button contents
-   */
-  label: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
-   */
-  onClick: PropTypes.func
-};
+exports.Button = Button;
 Button.defaultProps = {
   backgroundColor: null,
   primary: false,

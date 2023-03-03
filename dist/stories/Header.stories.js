@@ -1,7 +1,13 @@
-import { Header } from './Header';
-export default {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = exports.LoggedOut = exports.LoggedIn = void 0;
+var _Header = require("./Header");
+var _default = {
   title: 'Example/Header',
-  component: Header,
+  component: _Header.Header,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/7.0/react/writing-docs/docs-page
   tags: ['autodocs'],
   parameters: {
@@ -9,13 +15,16 @@ export default {
     layout: 'fullscreen'
   }
 };
-export const LoggedIn = {
+exports["default"] = _default;
+var LoggedIn = {
   args: {
     user: {
       name: 'Jane Doe'
     }
   }
 };
-export const LoggedOut = {
+exports.LoggedIn = LoggedIn;
+var LoggedOut = {
   args: {}
 };
+exports.LoggedOut = LoggedOut;

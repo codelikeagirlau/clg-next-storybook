@@ -1,5 +1,1 @@
-const TestComponent = require("./stories/TestComponent");
-
-module.exports = {
-  TestComponent,
-};
+export * from "./stories/TestComponent";

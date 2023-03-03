@@ -1,1 +1,4 @@
-export * from "../src/stories/Header";
+const Header = require("./src/stories/Header");
+module.exports = {
+  Header
+};

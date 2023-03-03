@@ -1,1 +1,4 @@
-export * from "./stories/TestComponent";
+const TestComponent = require("./stories/TestComponent");
+module.exports = {
+  TestComponent
+};

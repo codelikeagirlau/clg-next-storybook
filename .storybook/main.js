@@ -20,6 +20,25 @@ const config = {
   features: {
     interactionsDebugger: true,
   },
+  webpackFinal: async (config, { configType }) => {
+    // Disable the default Babel loader
+    config.module.rules = config.module.rules.filter(
+      (rule) => !/babel-loader/i.test(rule.loader || "")
+    );
+
+    // Add SWC loader
+    config.module.rules.push({
+      test: /\.(js|mjs|jsx|ts|tsx)$/,
+      include: [path.resolve(__dirname, "../src")],
+      use: [
+        {
+          loader: "swc-loader",
+        },
+      ],
+    });
+
+    return config;
+  },
 };
 
 module.exports = config;

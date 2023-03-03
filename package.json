@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "dev": "next dev",
-    "build": "cross-env BABEL_ENV=production babel src -d dist",
+    "build": "next build src -c next-swc.config.js",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
@@ -39,7 +39,8 @@
     "@storybook/react": "^7.0.0-beta.55",
     "@storybook/testing-library": "^0.0.14-next.1",
     "eslint-plugin-storybook": "^0.6.11",
-    "storybook": "^7.0.0-beta.55"
+    "storybook": "^7.0.0-beta.55",
+    "swc-loader": "^0.2.3"
   },
   "description": "Storybook design system for CLG apps using Next JS",
   "main": "dist/index.js",
